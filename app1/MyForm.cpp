@@ -183,8 +183,6 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 	}
 
 	// отображаем легенду для скрытых ранее параметров графика
-	//this->chart1->Series[2]->IsVisibleInLegend = 1;
-	//this->chart1->Series[3]->IsVisibleInLegend = 1;
 	this->chart1->Series[5]->IsVisibleInLegend = 1;
 
 	res = cl.recognize(obj); // классификация
