@@ -19,7 +19,7 @@ public:
 
     Classifier(); // конструктор класса, осуществляет начальную инициализацию
 
-    void read_file(char* file_path); // считываем объекты классов A,B,C,D из файла
+    void read_file(); // считываем объекты классов A,B,C,D из файла
     double distance(int node_num, int* x, int* y); // считает расстояние между объектами класса
     int discr_func(int node_num, int* obj); // реализация дискриминантной функции
     int neighbour_1(int node_num, int* obj); // реализация метода 1-го ближайшего соседа
