@@ -182,6 +182,10 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		this->chart1->Series[i]->Points->Clear();
 	}
 
+	// скрываем легенду для неиспользуемых параметров графика
+	this->chart1->Series[2]->IsVisibleInLegend = 0;
+	this->chart1->Series[3]->IsVisibleInLegend = 0;
+
 	// отображаем легенду для скрытых ранее параметров графика
 	this->chart1->Series[5]->IsVisibleInLegend = 1;
 

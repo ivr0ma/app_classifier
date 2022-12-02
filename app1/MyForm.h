@@ -622,5 +622,6 @@ namespace app1 {
 	private: System::Void очиститьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }
