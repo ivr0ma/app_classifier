@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "Classifier.h"
 
 namespace app1 {
@@ -11,7 +11,7 @@ namespace app1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -20,13 +20,13 @@ namespace app1 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -39,10 +39,10 @@ namespace app1 {
 	protected:
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ менюToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ выходToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ построитьГрафикToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ очиститьГрафикToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РјРµРЅСЋToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІС‹С…РѕРґToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::GroupBox^ groupBox3;
 	private: System::Windows::Forms::Label^ label11;
@@ -74,14 +74,14 @@ namespace app1 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -96,10 +96,10 @@ namespace app1 {
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->менюToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->построитьГрафикToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->очиститьГрафикToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->выходToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РјРµРЅСЋToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІС‹С…РѕРґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
@@ -137,8 +137,8 @@ namespace app1 {
 			// 
 			// chart1
 			// 
-			chartArea1->AxisX->Title = L"признак 1";
-			chartArea1->AxisY->Title = L"признак 5";
+			chartArea1->AxisX->Title = L"РїСЂРёР·РЅР°Рє 1";
+			chartArea1->AxisY->Title = L"РїСЂРёР·РЅР°Рє 5";
 			chartArea1->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
@@ -150,33 +150,33 @@ namespace app1 {
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series1->Color = System::Drawing::Color::Red;
 			series1->Legend = L"Legend1";
-			series1->LegendText = L"класс A";
+			series1->LegendText = L"РєР»Р°СЃСЃ A";
 			series1->Name = L"Series1";
 			series2->BorderWidth = 2;
 			series2->ChartArea = L"ChartArea1";
 			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series2->Color = System::Drawing::Color::Blue;
 			series2->Legend = L"Legend1";
-			series2->LegendText = L"класс B";
+			series2->LegendText = L"РєР»Р°СЃСЃ B";
 			series2->Name = L"Series2";
 			series3->BorderWidth = 2;
 			series3->ChartArea = L"ChartArea1";
 			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series3->Color = System::Drawing::Color::Lime;
 			series3->Legend = L"Legend1";
-			series3->LegendText = L"класс C";
+			series3->LegendText = L"РєР»Р°СЃСЃ C";
 			series3->Name = L"Series3";
 			series4->ChartArea = L"ChartArea1";
 			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series4->Color = System::Drawing::Color::Fuchsia;
 			series4->Legend = L"Legend1";
-			series4->LegendText = L"класс D";
+			series4->LegendText = L"РєР»Р°СЃСЃ D";
 			series4->Name = L"Series4";
 			series5->ChartArea = L"ChartArea1";
 			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
 			series5->Color = System::Drawing::Color::Black;
 			series5->Legend = L"Legend1";
-			series5->LegendText = L"дискр. ф-ия";
+			series5->LegendText = L"РґРёСЃРєСЂ. С„-РёСЏ";
 			series5->Name = L"Series5";
 			series6->ChartArea = L"ChartArea1";
 			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
@@ -208,13 +208,13 @@ namespace app1 {
 			this->groupBox1->Size = System::Drawing::Size(482, 303);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"график";
+			this->groupBox1->Text = L"РіСЂР°С„РёРє";
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->менюToolStripMenuItem,
-					this->выходToolStripMenuItem
+				this->РјРµРЅСЋToolStripMenuItem,
+					this->РІС‹С…РѕРґToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -222,36 +222,36 @@ namespace app1 {
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// менюToolStripMenuItem
+			// РјРµРЅСЋToolStripMenuItem
 			// 
-			this->менюToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->построитьГрафикToolStripMenuItem,
-					this->очиститьГрафикToolStripMenuItem
+			this->РјРµРЅСЋToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem,
+					this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem
 			});
-			this->менюToolStripMenuItem->Name = L"менюToolStripMenuItem";
-			this->менюToolStripMenuItem->Size = System::Drawing::Size(53, 20);
-			this->менюToolStripMenuItem->Text = L"Меню";
+			this->РјРµРЅСЋToolStripMenuItem->Name = L"РјРµРЅСЋToolStripMenuItem";
+			this->РјРµРЅСЋToolStripMenuItem->Size = System::Drawing::Size(53, 20);
+			this->РјРµРЅСЋToolStripMenuItem->Text = L"РњРµРЅСЋ";
 			// 
-			// построитьГрафикToolStripMenuItem
+			// РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem
 			// 
-			this->построитьГрафикToolStripMenuItem->Name = L"построитьГрафикToolStripMenuItem";
-			this->построитьГрафикToolStripMenuItem->Size = System::Drawing::Size(176, 22);
-			this->построитьГрафикToolStripMenuItem->Text = L"Построить график";
-			this->построитьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::построитьГрафикToolStripMenuItem_Click);
+			this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Name = L"РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem";
+			this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Size = System::Drawing::Size(176, 22);
+			this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Text = L"РџРѕСЃС‚СЂРѕРёС‚СЊ РіСЂР°С„РёРє";
+			this->РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click);
 			// 
-			// очиститьГрафикToolStripMenuItem
+			// РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem
 			// 
-			this->очиститьГрафикToolStripMenuItem->Name = L"очиститьГрафикToolStripMenuItem";
-			this->очиститьГрафикToolStripMenuItem->Size = System::Drawing::Size(176, 22);
-			this->очиститьГрафикToolStripMenuItem->Text = L"Очистить график";
-			this->очиститьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьГрафикToolStripMenuItem_Click);
+			this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Name = L"РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem";
+			this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Size = System::Drawing::Size(176, 22);
+			this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Text = L"РћС‡РёСЃС‚РёС‚СЊ РіСЂР°С„РёРє";
+			this->РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click);
 			// 
-			// выходToolStripMenuItem
+			// РІС‹С…РѕРґToolStripMenuItem
 			// 
-			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
-			this->выходToolStripMenuItem->Size = System::Drawing::Size(54, 20);
-			this->выходToolStripMenuItem->Text = L"Выход";
-			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::выходToolStripMenuItem_Click);
+			this->РІС‹С…РѕРґToolStripMenuItem->Name = L"РІС‹С…РѕРґToolStripMenuItem";
+			this->РІС‹С…РѕРґToolStripMenuItem->Size = System::Drawing::Size(54, 20);
+			this->РІС‹С…РѕРґToolStripMenuItem->Text = L"Р’С‹С…РѕРґ";
+			this->РІС‹С…РѕРґToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РІС‹С…РѕРґToolStripMenuItem_Click);
 			// 
 			// groupBox2
 			// 
@@ -265,7 +265,7 @@ namespace app1 {
 			this->groupBox2->Size = System::Drawing::Size(114, 114);
 			this->groupBox2->TabIndex = 3;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"параметры";
+			this->groupBox2->Text = L"РїР°СЂР°РјРµС‚СЂС‹";
 			// 
 			// radioButton3
 			// 
@@ -276,7 +276,7 @@ namespace app1 {
 			this->radioButton3->Name = L"radioButton3";
 			this->radioButton3->Size = System::Drawing::Size(67, 20);
 			this->radioButton3->TabIndex = 2;
-			this->radioButton3->Text = L"узел 3";
+			this->radioButton3->Text = L"СѓР·РµР» 3";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			// 
 			// radioButton2
@@ -288,7 +288,7 @@ namespace app1 {
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(67, 20);
 			this->radioButton2->TabIndex = 1;
-			this->radioButton2->Text = L"узел 2";
+			this->radioButton2->Text = L"СѓР·РµР» 2";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
 			// radioButton1
@@ -302,7 +302,7 @@ namespace app1 {
 			this->radioButton1->Size = System::Drawing::Size(67, 20);
 			this->radioButton1->TabIndex = 0;
 			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"узел 1";
+			this->radioButton1->Text = L"СѓР·РµР» 1";
 			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
@@ -337,7 +337,7 @@ namespace app1 {
 			this->groupBox3->Size = System::Drawing::Size(482, 100);
 			this->groupBox3->TabIndex = 4;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"объект";
+			this->groupBox3->Text = L"РѕР±СЉРµРєС‚";
 			// 
 			// button1
 			// 
@@ -347,7 +347,7 @@ namespace app1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(157, 23);
 			this->button1->TabIndex = 21;
-			this->button1->Text = L"классифицировать";
+			this->button1->Text = L"РєР»Р°СЃСЃРёС„РёС†РёСЂРѕРІР°С‚СЊ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -360,7 +360,7 @@ namespace app1 {
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(115, 16);
 			this->label12->TabIndex = 20;
-			this->label12->Text = L"объект класса: _";
+			this->label12->Text = L"РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°: _";
 			// 
 			// label11
 			// 
@@ -371,7 +371,7 @@ namespace app1 {
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(73, 16);
 			this->label11->TabIndex = 19;
-			this->label11->Text = L"признаки:";
+			this->label11->Text = L"РїСЂРёР·РЅР°РєРё:";
 			// 
 			// textBox10
 			// 
@@ -600,19 +600,19 @@ namespace app1 {
 #pragma endregion
 	
 	private:
-	int* obj; // вектор признаков объекта
+	int* obj; // РІРµРєС‚РѕСЂ РїСЂРёР·РЅР°РєРѕРІ РѕР±СЉРµРєС‚Р°
 
-	int n1_pr1 = 0, n1_pr2 = 3; // номера признаков для 1-го узла
-	int n2_pr1 = 3, n2_pr2 = 4; // номера признаков для 2-го узла
-	int n3_pr1 = 4, n3_pr2 = 8; // номера признаков для 3-го узла
+	int n1_pr1 = 0, n1_pr2 = 3; // РЅРѕРјРµСЂР° РїСЂРёР·РЅР°РєРѕРІ РґР»СЏ 1-РіРѕ СѓР·Р»Р°
+	int n2_pr1 = 3, n2_pr2 = 4; // РЅРѕРјРµСЂР° РїСЂРёР·РЅР°РєРѕРІ РґР»СЏ 2-РіРѕ СѓР·Р»Р°
+	int n3_pr1 = 4, n3_pr2 = 8; // РЅРѕРјРµСЂР° РїСЂРёР·РЅР°РєРѕРІ РґР»СЏ 3-РіРѕ СѓР·Р»Р°
 
-	double n1_c1 = -69.78, n1_c2 = -1.96; // значения параметров c1 и c2 для узла 1 соответсвенно
-	double n2_c1 = -156.65, n2_c2 = -4.75; // значения параметров c1 и c2 для узла 2 соответсвенно
-	double n3_c1 = 45.58, n3_c2 = -0.42; // значения параметров c1 и c2 для узла 3 соответсвенно
+	double n1_c1 = -69.78, n1_c2 = -1.96; // Р·РЅР°С‡РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ c1 Рё c2 РґР»СЏ СѓР·Р»Р° 1 СЃРѕРѕС‚РІРµС‚СЃРІРµРЅРЅРѕ
+	double n2_c1 = -156.65, n2_c2 = -4.75; // Р·РЅР°С‡РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ c1 Рё c2 РґР»СЏ СѓР·Р»Р° 2 СЃРѕРѕС‚РІРµС‚СЃРІРµРЅРЅРѕ
+	double n3_c1 = 45.58, n3_c2 = -0.42; // Р·РЅР°С‡РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ c1 Рё c2 РґР»СЏ СѓР·Р»Р° 3 СЃРѕРѕС‚РІРµС‚СЃРІРµРЅРЅРѕ
 
-	private: System::Void построитьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void очиститьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

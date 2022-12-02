@@ -1,4 +1,4 @@
-#include "MyForm.h"
+п»ї#include "MyForm.h"
 #include <Windows.h>
 using namespace app1;
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -9,89 +9,89 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 }
 
 //
-// построение графика для каждого узла
+// РїРѕСЃС‚СЂРѕРµРЅРёРµ РіСЂР°С„РёРєР° РґР»СЏ РєР°Р¶РґРѕРіРѕ СѓР·Р»Р°
 //
-System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void app1::MyForm::РїРѕСЃС‚СЂРѕРёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	Classifier cl;          // объект класса
-	double c1, c2, x1, x2;  // коэф-ты для дискриминантной функции 
+	Classifier cl;          // РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°
+	double c1, c2, x1, x2;  // РєРѕСЌС„-С‚С‹ РґР»СЏ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё 
 
-	// очищаем график
+	// РѕС‡РёС‰Р°РµРј РіСЂР°С„РёРє
 	for (int i = 0; i < 6; i++) {
 		this->chart1->Series[i]->Points->Clear();
 	}
 
-	// скрываем легенду для неиспользуемых параметров графика
+	// СЃРєСЂС‹РІР°РµРј Р»РµРіРµРЅРґСѓ РґР»СЏ РЅРµРёСЃРїРѕР»СЊР·СѓРµРјС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ РіСЂР°С„РёРєР°
 	this->chart1->Series[2]->IsVisibleInLegend = 0;
 	this->chart1->Series[3]->IsVisibleInLegend = 0;
 	this->chart1->Series[5]->IsVisibleInLegend = 0;
 
-	// 1-ый узел
+	// 1-С‹Р№ СѓР·РµР»
 	if (radioButton1->Checked) {
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n1_pr1+1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n1_pr2+1);
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n1_pr1+1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n1_pr2+1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(cl.cl_A[i][n1_pr1], cl.cl_A[i][n1_pr2]); // добавляем очередную точку класса А
-			this->chart1->Series[0]->Points->AddXY(cl.cl_C[i][n1_pr1], cl.cl_C[i][n1_pr2]); // добавляем очередную точку класса C
-			this->chart1->Series[1]->Points->AddXY(cl.cl_B[i][n1_pr1], cl.cl_B[i][n1_pr2]); // добавляем очередную точку класса B
-			this->chart1->Series[1]->Points->AddXY(cl.cl_D[i][n1_pr1], cl.cl_D[i][n1_pr2]); // добавляем очередную точку класса D
-			this->chart1->Series[0]->LegendText = "класс AC";
-			this->chart1->Series[1]->LegendText = "класс BD";
+			this->chart1->Series[0]->Points->AddXY(cl.cl_A[i][n1_pr1], cl.cl_A[i][n1_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° Рђ
+			this->chart1->Series[0]->Points->AddXY(cl.cl_C[i][n1_pr1], cl.cl_C[i][n1_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° C
+			this->chart1->Series[1]->Points->AddXY(cl.cl_B[i][n1_pr1], cl.cl_B[i][n1_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° B
+			this->chart1->Series[1]->Points->AddXY(cl.cl_D[i][n1_pr1], cl.cl_D[i][n1_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° D
+			this->chart1->Series[0]->LegendText = "РєР»Р°СЃСЃ AC";
+			this->chart1->Series[1]->LegendText = "РєР»Р°СЃСЃ BD";
 			this->chart1->Series[0]->IsVisibleInLegend = 1;
 			this->chart1->Series[1]->IsVisibleInLegend = 1;
 		}
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n1_c1;
 		c2 = n1_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 20 * i + 40;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РЅР° РіСЂР°С„РёРє
 		}
 	}
-	// 2-ой узел
+	// 2-РѕР№ СѓР·РµР»
 	else if (radioButton2->Checked) {
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n2_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr2 + 1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(cl.cl_A[i][n2_pr1], cl.cl_A[i][n2_pr2]); // добавляем очередную точку класса A
-			this->chart1->Series[1]->Points->AddXY(cl.cl_C[i][n2_pr1], cl.cl_C[i][n2_pr2]); // добавляем очередную точку класса C
-			this->chart1->Series[0]->LegendText = "класс A";
-			this->chart1->Series[1]->LegendText = "класс C";
+			this->chart1->Series[0]->Points->AddXY(cl.cl_A[i][n2_pr1], cl.cl_A[i][n2_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° A
+			this->chart1->Series[1]->Points->AddXY(cl.cl_C[i][n2_pr1], cl.cl_C[i][n2_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° C
+			this->chart1->Series[0]->LegendText = "РєР»Р°СЃСЃ A";
+			this->chart1->Series[1]->LegendText = "РєР»Р°СЃСЃ C";
 		}
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n2_c1;
 		c2 = n2_c2;
 		for (int i = 0; i < 2; i++) {
 			//x2 = 40 * i + 20;
 			x2 = 10 * i + 40;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РЅР° РіСЂР°С„РёРє
 		}
 	}
-	// 3-ий узел
+	// 3-РёР№ СѓР·РµР»
 	else {
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n3_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n3_pr2 + 1);
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr2 + 1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(cl.cl_B[i][n3_pr1], cl.cl_B[i][n3_pr2]); // добавляем очередную точку класса B
-			this->chart1->Series[1]->Points->AddXY(cl.cl_D[i][n3_pr1], cl.cl_D[i][n3_pr2]); // добавляем очередную точку класса D
-			this->chart1->Series[0]->LegendText = "класс B";
-			this->chart1->Series[1]->LegendText = "класс D";
+			this->chart1->Series[0]->Points->AddXY(cl.cl_B[i][n3_pr1], cl.cl_B[i][n3_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° B
+			this->chart1->Series[1]->Points->AddXY(cl.cl_D[i][n3_pr1], cl.cl_D[i][n3_pr2]); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РєР»Р°СЃСЃР° D
+			this->chart1->Series[0]->LegendText = "РєР»Р°СЃСЃ B";
+			this->chart1->Series[1]->LegendText = "РєР»Р°СЃСЃ D";
 		}
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n3_c1;
 		c2 = n3_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 60 * i + 10;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»СЏРµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ РЅР° РіСЂР°С„РёРє
 		}
 	}
 
@@ -99,11 +99,11 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click(System::Object
 }
 
 //
-// очистка области построения графика для каждого узла
+// РѕС‡РёСЃС‚РєР° РѕР±Р»Р°СЃС‚Рё РїРѕСЃС‚СЂРѕРµРЅРёСЏ РіСЂР°С„РёРєР° РґР»СЏ РєР°Р¶РґРѕРіРѕ СѓР·Р»Р°
 //
-System::Void app1::MyForm::очиститьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void app1::MyForm::РѕС‡РёСЃС‚РёС‚СЊР“СЂР°С„РёРєToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	// очищаем график
+	// РѕС‡РёС‰Р°РµРј РіСЂР°С„РёРє
 	for (int i = 0; i < 6; i++) {
 		this->chart1->Series[i]->Points->Clear();
 	}
@@ -112,32 +112,32 @@ System::Void app1::MyForm::очиститьГрафикToolStripMenuItem_Click(System::Object^
 }
 
 //
-// выход из приложения
+// РІС‹С…РѕРґ РёР· РїСЂРёР»РѕР¶РµРЅРёСЏ
 //
-System::Void app1::MyForm::выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void app1::MyForm::РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (MessageBox::Show("Вы точно хотите выйти?", "Внимание!", MessageBoxButtons::YesNo) == Windows::Forms::DialogResult::Yes) {
+	if (MessageBox::Show("Р’С‹ С‚РѕС‡РЅРѕ С…РѕС‚РёС‚Рµ РІС‹Р№С‚Рё?", "Р’РЅРёРјР°РЅРёРµ!", MessageBoxButtons::YesNo) == Windows::Forms::DialogResult::Yes) {
 		Application::Exit();
 	}
 }
 
 //
-// запуск процедуры классификации объекта
+// Р·Р°РїСѓСЃРє РїСЂРѕС†РµРґСѓСЂС‹ РєР»Р°СЃСЃРёС„РёРєР°С†РёРё РѕР±СЉРµРєС‚Р°
 //
 System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	obj = new int[10];     // отводим память под хранение признаков объекта
-	Classifier cl;         // объект класса
-	double c1, c2, x1, x2; // параметры дискриминантной функции
-	char res;              // результат распределения
-	int pr1, pr2;          // номера тек. признаков
+	obj = new int[10];     // РѕС‚РІРѕРґРёРј РїР°РјСЏС‚СЊ РїРѕРґ С…СЂР°РЅРµРЅРёРµ РїСЂРёР·РЅР°РєРѕРІ РѕР±СЉРµРєС‚Р°
+	Classifier cl;         // РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°
+	double c1, c2, x1, x2; // РїР°СЂР°РјРµС‚СЂС‹ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
+	char res;              // СЂРµР·СѓР»СЊС‚Р°С‚ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ
+	int pr1, pr2;          // РЅРѕРјРµСЂР° С‚РµРє. РїСЂРёР·РЅР°РєРѕРІ
 
-	// инициализация нулевыми значениями (значения по умолчанию)
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅСѓР»РµРІС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё (Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ)
 	for (int i = 0; i < 10; i++) {
 		obj[i] = 0;
 	}
 
-	// заполнение массива введенными значениями
+	// Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° РІРІРµРґРµРЅРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
 	if (textBox1->Text != "") {
 		obj[0] = Convert::ToInt32(textBox1->Text);
 	}
@@ -169,103 +169,103 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		obj[9] = Convert::ToInt32(textBox10->Text);
 	}
 
-	// очищаем график
+	// РѕС‡РёС‰Р°РµРј РіСЂР°С„РёРє
 	for (int i = 0; i < 6; i++) {
 		this->chart1->Series[i]->Points->Clear();
 	}
 
-	// отображаем легенду для скрытых ранее параметров графика
+	// РѕС‚РѕР±СЂР°Р¶Р°РµРј Р»РµРіРµРЅРґСѓ РґР»СЏ СЃРєСЂС‹С‚С‹С… СЂР°РЅРµРµ РїР°СЂР°РјРµС‚СЂРѕРІ РіСЂР°С„РёРєР°
 	this->chart1->Series[2]->IsVisibleInLegend = 1;
 	this->chart1->Series[3]->IsVisibleInLegend = 1;
 	this->chart1->Series[5]->IsVisibleInLegend = 1;
 
-	res = cl.recognize(obj); // классификация
+	res = cl.recognize(obj); // РєР»Р°СЃСЃРёС„РёРєР°С†РёСЏ
 	
-	// если объект класса A
+	// РµСЃР»Рё РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° A
 	if (res == 'A') {
-		this->label12->Text = "объект класса: A"; 
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n2_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
+		this->label12->Text = "РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°: A"; 
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr2 + 1);
 		pr1 = n2_pr1;
 		pr2 = n2_pr2;
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n2_c1;
 		c2 = n2_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 10 * i + 40;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавлем очередную точку
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»РµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ
 		}
 	}
-	// если объект класса B
+	// РµСЃР»Рё РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° B
 	if (res == 'B') {
-		this->label12->Text = "объект класса: B";
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n3_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n3_pr2 + 1);
+		this->label12->Text = "РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°: B";
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr2 + 1);
 		pr1 = n3_pr1;
 		pr2 = n3_pr2;
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n3_c1;
 		c2 = n3_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 60 * i + 10;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавлем очередную точку
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»РµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ
 		}
 	}
-	// если объект класса C
+	// РµСЃР»Рё РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° C
 	if (res == 'C') {
-		this->label12->Text = "объект класса: C";
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n2_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
+		this->label12->Text = "РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°: C";
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n2_pr2 + 1);
 		pr1 = n2_pr1;
 		pr2 = n2_pr2;
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n2_c1;
 		c2 = n2_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 10 * i + 40;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавлем очередную точку
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»РµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ
 		}
 	}
-	// если объект класса D
+	// РµСЃР»Рё РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° D
 	if (res == 'D') {
-		this->label12->Text = "объект класса: D";
-		this->chart1->ChartAreas[0]->AxisX->Title = "признак " + Convert::ToString(n3_pr1 + 1);
-		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n3_pr2 + 1);
+		this->label12->Text = "РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°: D";
+		this->chart1->ChartAreas[0]->AxisX->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr1 + 1);
+		this->chart1->ChartAreas[0]->AxisY->Title = "РїСЂРёР·РЅР°Рє " + Convert::ToString(n3_pr2 + 1);
 		pr1 = n3_pr1;
 		pr2 = n3_pr2;
 
-		// построение дискриминантной функции
+		// РїРѕСЃС‚СЂРѕРµРЅРёРµ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 		c1 = n3_c1;
 		c2 = n3_c2;
 		for (int i = 0; i < 2; i++) {
 			x2 = 60 * i + 10;
 			x1 = c1 - c2 * x2;
-			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавлем очередную точку
+			this->chart1->Series[4]->Points->AddXY(x1, x2); // РґРѕР±Р°РІР»РµРј РѕС‡РµСЂРµРґРЅСѓСЋ С‚РѕС‡РєСѓ
 		}
 	}
 
-	// отображаем объекты классов A,B,C,D
+	// РѕС‚РѕР±СЂР°Р¶Р°РµРј РѕР±СЉРµРєС‚С‹ РєР»Р°СЃСЃРѕРІ A,B,C,D
 	for (int i = 0; i < 15; i++) {
 		this->chart1->Series[0]->Points->AddXY(cl.cl_D[i][pr1], cl.cl_D[i][pr2]);
 		this->chart1->Series[1]->Points->AddXY(cl.cl_A[i][pr1], cl.cl_A[i][pr2]);
 		this->chart1->Series[2]->Points->AddXY(cl.cl_B[i][pr1], cl.cl_B[i][pr2]);
 		this->chart1->Series[3]->Points->AddXY(cl.cl_C[i][pr1], cl.cl_C[i][pr2]);
-		this->chart1->Series[0]->LegendText = "класс D";
-		this->chart1->Series[1]->LegendText = "класс A";
-		this->chart1->Series[2]->LegendText = "класс B";
-		this->chart1->Series[3]->LegendText = "класс C";
+		this->chart1->Series[0]->LegendText = "РєР»Р°СЃСЃ D";
+		this->chart1->Series[1]->LegendText = "РєР»Р°СЃСЃ A";
+		this->chart1->Series[2]->LegendText = "РєР»Р°СЃСЃ B";
+		this->chart1->Series[3]->LegendText = "РєР»Р°СЃСЃ C";
 	}
 
-	// отображаем введенный объект
+	// РѕС‚РѕР±СЂР°Р¶Р°РµРј РІРІРµРґРµРЅРЅС‹Р№ РѕР±СЉРµРєС‚
 	this->chart1->Series[5]->Points->AddXY(obj[pr1], obj[pr2]);
 
-	delete[] obj; // очищаем выделенную память
+	delete[] obj; // РѕС‡РёС‰Р°РµРј РІС‹РґРµР»РµРЅРЅСѓСЋ РїР°РјСЏС‚СЊ
 
 	return System::Void();
 }

@@ -1,4 +1,4 @@
-#ifndef CLASSIFIER_H
+п»ї#ifndef CLASSIFIER_H
 #define CLASSIFIER_H
 
 #include <iostream>
@@ -7,8 +7,8 @@
 
 class Classifier {
 private:
-    int work_tag[3][2];     // массив признаков
-    double func_coef[3][2]; // массив коэф-от для дискриминантной функции
+    int work_tag[3][2];     // РјР°СЃСЃРёРІ РїСЂРёР·РЅР°РєРѕРІ
+    double func_coef[3][2]; // РјР°СЃСЃРёРІ РєРѕСЌС„-РѕС‚ РґР»СЏ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
 public:
     int cl_A[15][10]; 
     int cl_B[15][10];
@@ -17,15 +17,15 @@ public:
     int cl_AC[30][10];
     int cl_BD[30][10];
 
-    Classifier(); // конструктор класса, осуществляет начальную инициализацию
+    Classifier(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚ РЅР°С‡Р°Р»СЊРЅСѓСЋ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЋ
 
-    void read_file(); // считываем объекты классов A,B,C,D из файла
-    double distance(int node_num, int* x, int* y); // считает расстояние между объектами класса
-    int discr_func(int node_num, int* obj); // реализация дискриминантной функции
-    int neighbour_1(int node_num, int* obj); // реализация метода 1-го ближайшего соседа
-    int neighbour_k(int k, int node_num, int* obj); // реализация метода k ближайших соседей
-    char recognize(int* obj); // классификация объекта
-    bool voting(int node_num, int* obj); // функция голосования
+    void read_file(); // СЃС‡РёС‚С‹РІР°РµРј РѕР±СЉРµРєС‚С‹ РєР»Р°СЃСЃРѕРІ A,B,C,D РёР· С„Р°Р№Р»Р°
+    double distance(int node_num, int* x, int* y); // СЃС‡РёС‚Р°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РѕР±СЉРµРєС‚Р°РјРё РєР»Р°СЃСЃР°
+    int discr_func(int node_num, int* obj); // СЂРµР°Р»РёР·Р°С†РёСЏ РґРёСЃРєСЂРёРјРёРЅР°РЅС‚РЅРѕР№ С„СѓРЅРєС†РёРё
+    int neighbour_1(int node_num, int* obj); // СЂРµР°Р»РёР·Р°С†РёСЏ РјРµС‚РѕРґР° 1-РіРѕ Р±Р»РёР¶Р°Р№С€РµРіРѕ СЃРѕСЃРµРґР°
+    int neighbour_k(int k, int node_num, int* obj); // СЂРµР°Р»РёР·Р°С†РёСЏ РјРµС‚РѕРґР° k Р±Р»РёР¶Р°Р№С€РёС… СЃРѕСЃРµРґРµР№
+    char recognize(int* obj); // РєР»Р°СЃСЃРёС„РёРєР°С†РёСЏ РѕР±СЉРµРєС‚Р°
+    bool voting(int node_num, int* obj); // С„СѓРЅРєС†РёСЏ РіРѕР»РѕСЃРѕРІР°РЅРёСЏ
 };
 
 #endif //CLASSIFIER_H
