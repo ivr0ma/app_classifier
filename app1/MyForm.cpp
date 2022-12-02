@@ -59,7 +59,7 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 
 		for (int i = 0; i < 15; i++) {
 			this->chart1->Series[0]->Points->AddXY(m2_cl1_pr1 + scale * (cl.cl_A[i][n2_pr1] - m2_cl1_pr1), m2_cl1_pr2 + scale * (cl.cl_A[i][n2_pr2] - m2_cl1_pr2)); // добавляем очередную точку класса A
-			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_C[i][n1_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_C[i][n2_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса C
 			this->chart1->Series[0]->LegendText = "класс A";
 			this->chart1->Series[1]->LegendText = "класс C";
 		}
