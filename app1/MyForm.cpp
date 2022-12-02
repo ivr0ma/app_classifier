@@ -15,7 +15,7 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 {
 	Classifier cl;          // объект класса
 	double c1, c2, x1, x2;  // коэф-ты для дискриминантной функции 
-	double scale = 0.5;
+	double scale = 0.5;     // массштаб графика
 
 	// очищаем график
 	for (int i = 0; i < 6; i++) {
@@ -132,6 +132,7 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 	double c1, c2, x1, x2; // параметры дискриминантной функции
 	char res;              // результат распределения
 	int pr1, pr2;          // номера тек. признаков
+	double scale = 0.5;     // массштаб графика
 
 	// инициализация нулевыми значениями (значения по умолчанию)
 	for (int i = 0; i < 10; i++) {
@@ -139,35 +140,41 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 	}
 
 	// заполнение массива введенными значениями
-	if (textBox1->Text != "") {
-		obj[0] = Convert::ToInt32(textBox1->Text);
+	try {
+		if (textBox1->Text != "") {
+			obj[0] = Convert::ToInt32(textBox1->Text);
+		}
+		if (textBox2->Text != "") {
+			obj[1] = Convert::ToInt32(textBox2->Text);
+		}
+		if (textBox3->Text != "") {
+			obj[2] = Convert::ToInt32(textBox3->Text);
+		}
+		if (textBox4->Text != "") {
+			obj[3] = Convert::ToInt32(textBox4->Text);
+		}
+		if (textBox5->Text != "") {
+			obj[4] = Convert::ToInt32(textBox5->Text);
+		}
+		if (textBox6->Text != "") {
+			obj[5] = Convert::ToInt32(textBox6->Text);
+		}
+		if (textBox7->Text != "") {
+			obj[6] = Convert::ToInt32(textBox7->Text);
+		}
+		if (textBox8->Text != "") {
+			obj[7] = Convert::ToInt32(textBox8->Text);
+		}
+		if (textBox9->Text != "") {
+			obj[8] = Convert::ToInt32(textBox9->Text);
+		}
+		if (textBox10->Text != "") {
+			obj[9] = Convert::ToInt32(textBox10->Text);
+		}
 	}
-	if (textBox2->Text != "") {
-		obj[1] = Convert::ToInt32(textBox2->Text);
-	}
-	if (textBox3->Text != "") {
-		obj[2] = Convert::ToInt32(textBox3->Text);
-	}
-	if (textBox4->Text != "") {
-		obj[3] = Convert::ToInt32(textBox4->Text);
-	}
-	if (textBox5->Text != "") {
-		obj[4] = Convert::ToInt32(textBox5->Text);
-	}
-	if (textBox6->Text != "") {
-		obj[5] = Convert::ToInt32(textBox6->Text);
-	}
-	if (textBox7->Text != "") {
-		obj[6] = Convert::ToInt32(textBox7->Text);
-	}
-	if (textBox8->Text != "") {
-		obj[7] = Convert::ToInt32(textBox8->Text);
-	}
-	if (textBox9->Text != "") {
-		obj[8] = Convert::ToInt32(textBox9->Text);
-	}
-	if (textBox10->Text != "") {
-		obj[9] = Convert::ToInt32(textBox10->Text);
+	catch(...) {
+		MessageBox::Show("Некорректный формат данных. Данные должны быть числами.", "Внимание!");
+		return System::Void();
 	}
 
 	// очищаем график
@@ -176,8 +183,8 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 	}
 
 	// отображаем легенду для скрытых ранее параметров графика
-	this->chart1->Series[2]->IsVisibleInLegend = 1;
-	this->chart1->Series[3]->IsVisibleInLegend = 1;
+	//this->chart1->Series[2]->IsVisibleInLegend = 1;
+	//this->chart1->Series[3]->IsVisibleInLegend = 1;
 	this->chart1->Series[5]->IsVisibleInLegend = 1;
 
 	res = cl.recognize(obj); // классификация
@@ -189,6 +196,13 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
 		pr1 = n2_pr1;
 		pr2 = n2_pr2;
+
+		for (int i = 0; i < 15; i++) {
+			this->chart1->Series[0]->Points->AddXY(m2_cl1_pr1 + scale * (cl.cl_A[i][n2_pr1] - m2_cl1_pr1), m2_cl1_pr2 + scale * (cl.cl_A[i][n2_pr2] - m2_cl1_pr2)); // добавляем очередную точку класса A
+			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_C[i][n2_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[0]->LegendText = "класс A";
+			this->chart1->Series[1]->LegendText = "класс C";
+		}
 
 		// построение дискриминантной функции
 		c1 = n2_c1;
@@ -207,6 +221,13 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		pr1 = n3_pr1;
 		pr2 = n3_pr2;
 
+		for (int i = 0; i < 15; i++) {
+			this->chart1->Series[0]->Points->AddXY(m3_cl1_pr1 + scale * (cl.cl_B[i][n3_pr1] - m3_cl1_pr1), m3_cl1_pr2 + scale * (cl.cl_B[i][n3_pr2] - m3_cl1_pr2)); // добавляем очередную точку класса B
+			this->chart1->Series[1]->Points->AddXY(m3_cl2_pr1 + scale * (cl.cl_D[i][n3_pr1] - m3_cl2_pr1), m3_cl2_pr2 + scale * (cl.cl_D[i][n3_pr2] - m3_cl2_pr2)); // добавляем очередную точку класса D
+			this->chart1->Series[0]->LegendText = "класс B";
+			this->chart1->Series[1]->LegendText = "класс D";
+		}
+
 		// построение дискриминантной функции
 		c1 = n3_c1;
 		c2 = n3_c2;
@@ -223,6 +244,13 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
 		pr1 = n2_pr1;
 		pr2 = n2_pr2;
+
+		for (int i = 0; i < 15; i++) {
+			this->chart1->Series[0]->Points->AddXY(m2_cl1_pr1 + scale * (cl.cl_A[i][n2_pr1] - m2_cl1_pr1), m2_cl1_pr2 + scale * (cl.cl_A[i][n2_pr2] - m2_cl1_pr2)); // добавляем очередную точку класса A
+			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_C[i][n2_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[0]->LegendText = "класс A";
+			this->chart1->Series[1]->LegendText = "класс C";
+		}
 
 		// построение дискриминантной функции
 		c1 = n2_c1;
@@ -241,6 +269,13 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 		pr1 = n3_pr1;
 		pr2 = n3_pr2;
 
+		for (int i = 0; i < 15; i++) {
+			this->chart1->Series[0]->Points->AddXY(m3_cl1_pr1 + scale * (cl.cl_B[i][n3_pr1] - m3_cl1_pr1), m3_cl1_pr2 + scale * (cl.cl_B[i][n3_pr2] - m3_cl1_pr2)); // добавляем очередную точку класса B
+			this->chart1->Series[1]->Points->AddXY(m3_cl2_pr1 + scale * (cl.cl_D[i][n3_pr1] - m3_cl2_pr1), m3_cl2_pr2 + scale * (cl.cl_D[i][n3_pr2] - m3_cl2_pr2)); // добавляем очередную точку класса D
+			this->chart1->Series[0]->LegendText = "класс B";
+			this->chart1->Series[1]->LegendText = "класс D";
+		}
+
 		// построение дискриминантной функции
 		c1 = n3_c1;
 		c2 = n3_c2;
@@ -249,18 +284,6 @@ System::Void app1::MyForm::button1_Click(System::Object^ sender, System::EventAr
 			x1 = c1 - c2 * x2;
 			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавлем очередную точку
 		}
-	}
-
-	// отображаем объекты классов A,B,C,D
-	for (int i = 0; i < 15; i++) {
-		this->chart1->Series[0]->Points->AddXY(cl.cl_D[i][pr1], cl.cl_D[i][pr2]);
-		this->chart1->Series[1]->Points->AddXY(cl.cl_A[i][pr1], cl.cl_A[i][pr2]);
-		this->chart1->Series[2]->Points->AddXY(cl.cl_B[i][pr1], cl.cl_B[i][pr2]);
-		this->chart1->Series[3]->Points->AddXY(cl.cl_C[i][pr1], cl.cl_C[i][pr2]);
-		this->chart1->Series[0]->LegendText = "класс D";
-		this->chart1->Series[1]->LegendText = "класс A";
-		this->chart1->Series[2]->LegendText = "класс B";
-		this->chart1->Series[3]->LegendText = "класс C";
 	}
 
 	// отображаем введенный объект

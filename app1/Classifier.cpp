@@ -336,7 +336,7 @@ int Classifier::neighbour_k(int k, int node_num, int* obj) {
 // функция голосования
 //
 bool Classifier::voting(int node_num, int* obj) {
-    return discr_func(node_num, obj) + neighbour_k(1, node_num, obj) + neighbour_k(3, node_num, obj) >= 2;
+    return discr_func(node_num, obj) + neighbour_1(node_num, obj) + neighbour_k(3, node_num, obj) >= 2;
 }
 
 //
