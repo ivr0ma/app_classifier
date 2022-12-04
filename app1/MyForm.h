@@ -235,14 +235,14 @@ namespace app1 {
 			// построитьГрафикToolStripMenuItem
 			// 
 			this->построитьГрафикToolStripMenuItem->Name = L"построитьГрафикToolStripMenuItem";
-			this->построитьГрафикToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->построитьГрафикToolStripMenuItem->Size = System::Drawing::Size(137, 22);
 			this->построитьГрафикToolStripMenuItem->Text = L"Show graph";
 			this->построитьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::построитьГрафикToolStripMenuItem_Click);
 			// 
 			// очиститьГрафикToolStripMenuItem
 			// 
 			this->очиститьГрафикToolStripMenuItem->Name = L"очиститьГрафикToolStripMenuItem";
-			this->очиститьГрафикToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->очиститьГрафикToolStripMenuItem->Size = System::Drawing::Size(137, 22);
 			this->очиститьГрафикToolStripMenuItem->Text = L"Clear graph";
 			this->очиститьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьГрафикToolStripMenuItem_Click);
 			// 
@@ -367,7 +367,7 @@ namespace app1 {
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label11->Location = System::Drawing::Point(6, 40);
+			this->label11->Location = System::Drawing::Point(28, 40);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(51, 16);
 			this->label11->TabIndex = 19;
