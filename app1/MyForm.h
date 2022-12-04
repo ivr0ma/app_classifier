@@ -137,8 +137,8 @@ namespace app1 {
 			// 
 			// chart1
 			// 
-			chartArea1->AxisX->Title = L"признак 1";
-			chartArea1->AxisY->Title = L"признак 5";
+			chartArea1->AxisX->Title = L"feature 1";
+			chartArea1->AxisY->Title = L"feature 5";
 			chartArea1->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
@@ -150,33 +150,33 @@ namespace app1 {
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series1->Color = System::Drawing::Color::Red;
 			series1->Legend = L"Legend1";
-			series1->LegendText = L"класс A";
+			series1->LegendText = L"class A";
 			series1->Name = L"Series1";
 			series2->BorderWidth = 2;
 			series2->ChartArea = L"ChartArea1";
 			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series2->Color = System::Drawing::Color::Blue;
 			series2->Legend = L"Legend1";
-			series2->LegendText = L"класс B";
+			series2->LegendText = L"class B";
 			series2->Name = L"Series2";
 			series3->BorderWidth = 2;
 			series3->ChartArea = L"ChartArea1";
 			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series3->Color = System::Drawing::Color::Lime;
 			series3->Legend = L"Legend1";
-			series3->LegendText = L"класс C";
+			series3->LegendText = L"class C";
 			series3->Name = L"Series3";
 			series4->ChartArea = L"ChartArea1";
 			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
 			series4->Color = System::Drawing::Color::Fuchsia;
 			series4->Legend = L"Legend1";
-			series4->LegendText = L"класс D";
+			series4->LegendText = L"class D";
 			series4->Name = L"Series4";
 			series5->ChartArea = L"ChartArea1";
 			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
 			series5->Color = System::Drawing::Color::Black;
 			series5->Legend = L"Legend1";
-			series5->LegendText = L"дискр. ф-ия";
+			series5->LegendText = L"disc. function";
 			series5->Name = L"Series5";
 			series6->ChartArea = L"ChartArea1";
 			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
@@ -208,7 +208,7 @@ namespace app1 {
 			this->groupBox1->Size = System::Drawing::Size(482, 303);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"график";
+			this->groupBox1->Text = L"graph";
 			// 
 			// menuStrip1
 			// 
@@ -229,28 +229,28 @@ namespace app1 {
 					this->очиститьГрафикToolStripMenuItem
 			});
 			this->менюToolStripMenuItem->Name = L"менюToolStripMenuItem";
-			this->менюToolStripMenuItem->Size = System::Drawing::Size(53, 20);
-			this->менюToolStripMenuItem->Text = L"Меню";
+			this->менюToolStripMenuItem->Size = System::Drawing::Size(50, 20);
+			this->менюToolStripMenuItem->Text = L"Menu";
 			// 
 			// построитьГрафикToolStripMenuItem
 			// 
 			this->построитьГрафикToolStripMenuItem->Name = L"построитьГрафикToolStripMenuItem";
-			this->построитьГрафикToolStripMenuItem->Size = System::Drawing::Size(176, 22);
-			this->построитьГрафикToolStripMenuItem->Text = L"Построить график";
+			this->построитьГрафикToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->построитьГрафикToolStripMenuItem->Text = L"Show graph";
 			this->построитьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::построитьГрафикToolStripMenuItem_Click);
 			// 
 			// очиститьГрафикToolStripMenuItem
 			// 
 			this->очиститьГрафикToolStripMenuItem->Name = L"очиститьГрафикToolStripMenuItem";
-			this->очиститьГрафикToolStripMenuItem->Size = System::Drawing::Size(176, 22);
-			this->очиститьГрафикToolStripMenuItem->Text = L"Очистить график";
+			this->очиститьГрафикToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->очиститьГрафикToolStripMenuItem->Text = L"Clear graph";
 			this->очиститьГрафикToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьГрафикToolStripMenuItem_Click);
 			// 
 			// выходToolStripMenuItem
 			// 
 			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
-			this->выходToolStripMenuItem->Size = System::Drawing::Size(54, 20);
-			this->выходToolStripMenuItem->Text = L"Выход";
+			this->выходToolStripMenuItem->Size = System::Drawing::Size(38, 20);
+			this->выходToolStripMenuItem->Text = L"Exit";
 			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::выходToolStripMenuItem_Click);
 			// 
 			// groupBox2
@@ -265,7 +265,7 @@ namespace app1 {
 			this->groupBox2->Size = System::Drawing::Size(114, 114);
 			this->groupBox2->TabIndex = 3;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"параметры";
+			this->groupBox2->Text = L"parameters";
 			// 
 			// radioButton3
 			// 
@@ -274,9 +274,9 @@ namespace app1 {
 				static_cast<System::Byte>(204)));
 			this->radioButton3->Location = System::Drawing::Point(19, 77);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(67, 20);
+			this->radioButton3->Size = System::Drawing::Size(66, 20);
 			this->radioButton3->TabIndex = 2;
-			this->radioButton3->Text = L"узел 3";
+			this->radioButton3->Text = L"node 3";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			// 
 			// radioButton2
@@ -286,9 +286,9 @@ namespace app1 {
 				static_cast<System::Byte>(204)));
 			this->radioButton2->Location = System::Drawing::Point(19, 51);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(67, 20);
+			this->radioButton2->Size = System::Drawing::Size(66, 20);
 			this->radioButton2->TabIndex = 1;
-			this->radioButton2->Text = L"узел 2";
+			this->radioButton2->Text = L"node 2";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
 			// radioButton1
@@ -299,10 +299,10 @@ namespace app1 {
 				static_cast<System::Byte>(204)));
 			this->radioButton1->Location = System::Drawing::Point(19, 25);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(67, 20);
+			this->radioButton1->Size = System::Drawing::Size(66, 20);
 			this->radioButton1->TabIndex = 0;
 			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"узел 1";
+			this->radioButton1->Text = L"node 1";
 			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
@@ -337,17 +337,17 @@ namespace app1 {
 			this->groupBox3->Size = System::Drawing::Size(482, 100);
 			this->groupBox3->TabIndex = 4;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"объект";
+			this->groupBox3->Text = L"object";
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(312, 68);
+			this->button1->Location = System::Drawing::Point(358, 68);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(157, 23);
+			this->button1->Size = System::Drawing::Size(111, 23);
 			this->button1->TabIndex = 21;
-			this->button1->Text = L"классифицировать";
+			this->button1->Text = L"classify";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -356,11 +356,11 @@ namespace app1 {
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label12->Location = System::Drawing::Point(169, 71);
+			this->label12->Location = System::Drawing::Point(221, 71);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(115, 16);
+			this->label12->Size = System::Drawing::Size(92, 16);
 			this->label12->TabIndex = 20;
-			this->label12->Text = L"объект класса: _";
+			this->label12->Text = L"class object: _";
 			// 
 			// label11
 			// 
@@ -369,9 +369,9 @@ namespace app1 {
 				static_cast<System::Byte>(204)));
 			this->label11->Location = System::Drawing::Point(6, 40);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(73, 16);
+			this->label11->Size = System::Drawing::Size(51, 16);
 			this->label11->TabIndex = 19;
-			this->label11->Text = L"признаки:";
+			this->label11->Text = L"feature:";
 			// 
 			// textBox10
 			// 
